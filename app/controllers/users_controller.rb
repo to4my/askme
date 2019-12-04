@@ -1,17 +1,30 @@
 class UsersController < ApplicationController
   def index
-    # Мы создаем массив из двух болванок пользователей. Для создания фейковой
-    # модели мы просто вызываем метод User.new, который создает модель, не
-    # записывая её в базу.
     @users = [
       User.new(
         id: 1,
+        name: 'Mikhail',
+        username: 'to4my',
+        avatar_url: 'https://lh3.googleusercontent.com/-y12HGFkzEgc/AAAAAAAAAAI/AAAAAAAAAAA/' \
+        'ACHi3rd1dpiwuhmobBbYy8kvzKdPNVTQ4g.CMID/s83-c/photo.jpg',
+        email: 'to4my@ya.ru',
+        password: '12345'
+
+      ),
+      User.new(
+        id: 2,
         name: 'Vadim',
         username: 'installero',
         avatar_url: 'https://secure.gravatar.com/avatar/' \
-          '71269686e0f757ddb4f73614f43ae445?s=100'
+          '71269686e0f757ddb4f73614f43ae445?s=100',
+        email: 'installero@ya.ru',
+        password: '12345'
       ),
-      User.new(id: 2, name: 'Misha', username: 'aristofun')
+      User.new(id: 3,
+               name: 'Misha',
+               username: 'aristofun',
+               email: 'aristofun@ya.ru',
+               password: '12345')
     ]
   end
 
@@ -21,28 +34,22 @@ class UsersController < ApplicationController
   def edit
   end
 
-  # Это действие отзывается, когда пользователь заходит по адресу /users/:id,
-  # например /users/1.
   def show
-    # Болванка пользователя
     @user = User.new(
-      name: 'Vadim',
-      username: 'installero',
-      avatar_url: 'https://secure.gravatar.com/avatar/' \
-        '71269686e0f757ddb4f73614f43ae445?s=100'
+      name: 'Mikhail',
+      username: 'to4my',
+      avatar_url: 'https://lh3.googleusercontent.com/-y12HGFkzEgc/AAAAAAAAAAI/AAAAAAAAAAA/' \
+        'ACHi3rd1dpiwuhmobBbYy8kvzKdPNVTQ4g.CMID/s83-c/photo.jpg',
+      email: 'to4my@ya.ru',
+      password: '12345'
+
     )
 
-    # Болванка вопросов для пользователя
     @questions = [
-      Question.new(text: 'Как дела?', created_at: Date.parse('27.03.2016')),
-      Question.new(
-        text: 'В чем смысл жизни?', created_at: Date.parse('27.03.2016')
-      )
+      Question.new(text: 'Как дела?', created_at: Date.parse('02.12.2019')),
+      Question.new(text: 'How much is the fish?', created_at: Date.parse('01.12.2019'))
     ]
 
-    # Болванка для нового вопроса
     @new_question = Question.new
-
-    # Обратите внимание, пока ни одна из болванок не достается из базы
   end
 end
