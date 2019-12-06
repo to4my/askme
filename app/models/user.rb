@@ -19,11 +19,6 @@ class User < ApplicationRecord
 
   before_validation :check_fields
 
-  def check_fields
-    self.username&.downcase!
-    self.email&.downcase!
-  end
-
   def encrypt_password
     if password.present?
       self.password_salt = User.hash_to_string(OpenSSL::Random.random_bytes(16))
@@ -54,6 +49,13 @@ class User < ApplicationRecord
     return user if user.password_hash == hashed_password
 
     nil
+  end
+
+  private
+
+  def check_fields
+    self.username&.downcase!
+    self.email&.downcase!
   end
 end
 
