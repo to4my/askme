@@ -6,21 +6,12 @@ module UsersHelper
     return prefix + many if (number % 100).between?(11, 14)
 
     word = case number % 10
-           when 1 then
-             one
-           when 2..4 then
-             few
-           else
-             many
+           when 1 then one
+           when 2..4 then few
+           else many
            end
 
     prefix + word
-  end
-
-  def questions_for_user(user)
-    @questions.select do |question|
-      question.user_id == user
-    end
   end
 
   def question_not_answers
