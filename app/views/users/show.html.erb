@@ -16,13 +16,13 @@
   @<%= @user.username %>
 </h2>
 <p class="text-small">
-  <% @count = @questions.count %>
-  Уже спросили: <%= @count %> <%= sklonenie(@count, "раз", "раза", "раз") %>
+  <% count = @questions.count %>
+  Уже спросили: <%= count %> <%= sklonenie(count, "раз", "раза", "раз") %>
 </p>
 <p class="text-small">
-  <% @count_asked = @count - question_not_answers %>
-  Ответил на: <%= @count_asked %>
-  <%= sklonenie(@count_asked, "вопрос", "вопроса", "вопросов") %>
+  <% count_asked = count - question_not_answers %>
+  Ответил на: <%= count_asked %>
+  <%= sklonenie(count_asked, "вопрос", "вопроса", "вопросов") %>
 </p>
 <p class="text-small">
   Еще предстоит ответить на:
