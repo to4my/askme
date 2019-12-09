@@ -13,8 +13,4 @@ module UsersHelper
 
     prefix + word
   end
-
-  def question_not_answers
-    @questions.select{ |question| question.answer == nil }.count
-  end
 end
