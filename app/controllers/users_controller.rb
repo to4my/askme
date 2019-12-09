@@ -26,8 +26,6 @@ class UsersController < ApplicationController
       render 'new'
     end
 
-    user = User.authenticate(params[:email], params[:password])
-
   end
 
   def edit
