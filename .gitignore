@@ -38,4 +38,5 @@ yarn-debug.log*
 .ruby-version
 .idea/
 .DS_Store
+.generators
 

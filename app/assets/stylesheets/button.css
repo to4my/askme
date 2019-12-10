@@ -29,3 +29,7 @@
   line-height: 15px;
   padding: 7px 15px;
 }
+.button-red {
+  background: #8e0000;
+  color: #fff;
+}
