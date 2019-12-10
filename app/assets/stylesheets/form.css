@@ -2,6 +2,12 @@
   margin-bottom: 10px;
 }
 
+.form-field + .color{
+  margin-bottom: 10px;
+  width: 40%;
+}
+
+
 .form-label {
   display: block;
   margin-bottom: 5px;

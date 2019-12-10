@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :username, length: { maximum: 40 }, format: { with: /\A[\w]+\z/ }
 
   validates :password, presence: true, on: :create
+  validates :bg_color, format: { with: /\A#[\h]{6}\z/ }, allow_nil: true
 
   validates_confirmation_of :password
 
