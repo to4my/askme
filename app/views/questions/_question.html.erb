@@ -12,6 +12,9 @@
 
     <div class="question-date">
       <%= l(question.created_at, format: :short) %>
+      <% if question.author %>
+        <%= link_to "от @#{question.author.username}", user_path(question.author), class: 'question-author' %>
+      <% end %>
     </div>
   </div>
 
