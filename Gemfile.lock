@@ -180,7 +180,6 @@ DEPENDENCIES
   rails (~> 6.0.1)
   sass-rails (>= 6)
   sqlite3 (~> 1.4)
-  tzinfo-data
   web-console (>= 3.3.0)
   webpacker (~> 4.0)
 
